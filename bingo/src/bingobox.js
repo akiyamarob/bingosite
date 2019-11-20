@@ -1,3 +1,4 @@
+window.onload=function(){
 var numlist=[]
 for(i=1;i<101;i++){
     numlist.push(i);
@@ -57,7 +58,7 @@ for(i=4;i<21;i+=4){
     bingo_sl2.push(bingolist[i])
 }
 
-var table="<table>"
+var table='<table class="table table-striped">'
 table+="<tr>"
 bingo_col1.forEach((value) => {
     table+="<td>"+value+"<td>"
@@ -83,5 +84,7 @@ bingo_col5.forEach((value) => {
     table+="<td>"+value+"<td>"
 })
 table+="</tr>";
-table+="</table>"
-console.log(table)
+table+="</table>";
+var bingotable=document.getElementById("bingotable")
+bingotable.innerHTML=table
+}
