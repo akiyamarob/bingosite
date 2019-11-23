@@ -1,3 +1,4 @@
+var json
 window.onload=function(){
 var numlist=[]
 for(i=1;i<101;i++){
@@ -57,4 +58,21 @@ var bingo_sl2=[]
 for(i=4;i<21;i+=4){
     bingo_sl2.push(bingolist[i])
 }
+var chkdt={
+    col1:bingo_col1,
+    col2:bingo_col2,
+    col3:bingo_col3,
+    col4:bingo_col4,
+    col5:bingo_col5,
+    axs1:bingo_axs1,
+    axs2:bingo_axs2,
+    axs3:bingo_axs3,
+    axs4:bingo_axs4,
+    axs5:bingo_axs5,
+    sl1:bingo_sl1,
+    sl2:bingo_sl2 
+}
+
+json=JSON.stringify(chkdt)
+createtable();
 }

@@ -1,27 +1,33 @@
 function createtable(){
-    var table='<table class="table table-striped">'
+    val=JSON.parse(json)
+    var col1=val.col1
+    var col2=val.col2
+    var col3=val.col3
+    var col4=val.col4
+    var col5=val.col5
+    var table='<table>'
 table+="<tr>"
-bingo_col1.forEach((value) => {
+col1.forEach((value) => {
     table+="<td>"+value+"<td>"
 })
 table+="</tr>";
 table+="<tr>"
-bingo_col2.forEach((value) => {
+col2.forEach((value) => {
     table+="<td>"+value+"<td>"
 })
 table+="</tr>";
 table+="<tr>"
-bingo_col3.forEach((value) => {
+col3.forEach((value) => {
     table+="<td>"+value+"<td>"
 })
 table+="</tr>";
 table+="<tr>"
-bingo_col4.forEach((value) => {
+col4.forEach((value) => {
     table+="<td>"+value+"<td>"
 })
 table+="</tr>";
 table+="<tr>"
-bingo_col5.forEach((value) => {
+col5.forEach((value) => {
     table+="<td>"+value+"<td>"
 })
 table+="</tr>";
