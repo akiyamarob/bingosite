@@ -1,5 +1,6 @@
 function createtable(){
-    val=JSON.parse(json)
+    var jsonObj = sessionStorage.getItem("bingo");
+    val=JSON.parse(jsonObj)
     var col1=val.col1
     var col2=val.col2
     var col3=val.col3
