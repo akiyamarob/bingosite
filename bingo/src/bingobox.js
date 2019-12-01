@@ -74,7 +74,8 @@ var chkdt={
     sl2:bingo_sl2 
 };
 
-if(chkreload==false){json=JSON.stringify(chkdt)
+if(chkreload==false){
+    json=JSON.stringify(chkdt)
 sessionStorage.setItem('bingo',json);
 chkreload=true;
 }
