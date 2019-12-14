@@ -1,11 +1,19 @@
 {
-  "name": "bingo",
+  "name": "bingobox",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/akiyamarob/bingosite.git"
+  },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/akiyamarob/bingosite/issues"
+  },
+  "homepage": "https://github.com/akiyamarob/bingosite#readme"
 }
