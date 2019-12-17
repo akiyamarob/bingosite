@@ -22,6 +22,7 @@
         document.addEventListener('keyup', function (e) {
             if (e.ctrlKey) ctlKey = false;
         });
+        // ちなみにこれはF5誤爆を避けるためのコードなので触らないでください。全部消えます。
     </script>
 
 </head>
@@ -32,39 +33,19 @@
             <br><a>これまでの結果：</a><a id="allNo"></a>
             <!-- 基本的に要素はこの3つしかない。なにか思いついて足すかもしれない -->
             <script>
-                var counter = 0;
                 function choose() {
-                    if (counter == 100) {
+                    if (bingocrct.lenth>=chosenLength) {
                         var btn = document.getElementById("btn")
                         btn.disabled = "disabled";
                         // 100超えたらボタンを非活性化
                     } else {
-                        var randomer = ransu(10);
-                        if (randomer < 0) {
-                            randomer = 0;
-                        }
-                        if (randomer > 5) {
-                            var num = ransu(lastRandList.length - 1);
-                            bingocrct.push(lastRandList[num]);
-                            lastRandList.splice(num, 1);
-                            // こっちがランダムな数を出す
-                        } else {
-                            var num = ransu(chosenAnsList.length - 1);
-                            if (chosenAnsList.length == 0) {
-                                var num = ransu(lastRandList.length - 1);
-                                bingocrct.push(lastRandList[num]);
-                                lastRandList.splice(num, 1);
-                            } else {
-                                bingocrct.push(chosenAnsList[num]);
-                                chosenAnsList.splice(num, 1);
-                            }
-                        }
                         var crntNo = document.getElementById("crntNo")
-                        crntNo.innerHTML = bingocrct.slice(-1)[0]
+                        var temp = bingocrct.splice(0,4);
+                        showList.push(temp);
+                        crntNo.innerHTML = temp
                         // ここで打ち込んでる。なにかこの辺をいじる場合はご自由にどうぞ
                         var allNo = document.getElementById("allNo")
-                        allNo.innerHTML = bingocrct
-                        counter++;
+                        allNo.innerHTML = showList
                     }
                 }
             </script>
