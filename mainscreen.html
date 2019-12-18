@@ -40,8 +40,10 @@
                         <script>
                             audioElem = new Audio();
                             audioElem.src = "audio/nc42340.wav";
+                            audioElem.volume -= 0.3
                             function choose() {
                                 audioElem.play();
+                                
                                 // ダイス音がなります
                                 if (0 >= bingocrct) {
                                     var btn = document.getElementById("btn")
