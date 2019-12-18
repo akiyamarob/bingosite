@@ -8,9 +8,11 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
         integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
         crossorigin="anonymous"></script>
+    <script type="text/javascript" src="src/odometer.js"></script>
     <script src="src/controller.js"></script>
     <script src="src/chosenbingolist.js"></script>
     <script src="src/ransu.js"></script>
+    <link rel="stylesheet" href="css/odometer-theme-default.css" />
 
     <script>
         var ctlKey = false;
@@ -22,31 +24,45 @@
         document.addEventListener('keyup', function (e) {
             if (e.ctrlKey) ctlKey = false;
         });
-        // ちなみにこれはF5誤爆を避けるためのコードなので触らないでください。全部消えます。
+        // ちなみにこれはF5誤爆を避けるためのコードなので触らないでください。リロードで全部消えます。
     </script>
 
 </head>
 
 <body>
+    <audio autoplay  src="audio/test.mp3" controls>テスト</audio>
+    <!-- えっ自動再生できねえの！？ 今！？-->
     <input type="button" value="抽選" id="btn" onclick="choose()">
-    <a>現在のナンバー</a><a id="crntNo"><a>
-            <br><a>これまでの結果：</a><a id="allNo"></a>
-            <!-- 基本的に要素はこの3つしかない。なにか思いついて足すかもしれない -->
-            <script>
-                function choose() {
-                    if (bingocrct.lenth>=chosenLength) {
-                        var btn = document.getElementById("btn")
-                        btn.disabled = "disabled";
-                        // 100超えたらボタンを非活性化
-                    } else {
-                        var crntNo = document.getElementById("crntNo")
-                        var temp = bingocrct.splice(0,4);
-                        showList.push(temp);
-                        crntNo.innerHTML = temp
-                        // ここで打ち込んでる。なにかこの辺をいじる場合はご自由にどうぞ
-                        var allNo = document.getElementById("allNo")
-                        allNo.innerHTML = showList
-                    }
-                }
-            </script>
+    <a>現在のナンバー</a><a id="crntNo1" class="odometer"><a> <a id="crntNo2" class="odometer"><a></a> <a id="crntNo3"
+                    class="odometer"><a></a> <a id="crntNo4" class="odometer"><a></a>
+                        <br><a>これまでの結果：</a><a id="allNo"></a>
+                        <!-- 基本的に要素はこの3つしかない。なにか思いついて足すかもしれない -->
+                        <script>
+                            audioElem = new Audio();
+                            audioElem.src = "audio/nc42340.wav";
+                            function choose() {
+                                audioElem.play();
+                                // ダイス音がなります
+                                if (0 >= bingocrct) {
+                                    var btn = document.getElementById("btn")
+                                    btn.disabled = "disabled";
+                                    // 100超えたらボタンを非活性化
+                                } else {
+                                    var crntNo = document.getElementById("crntNo")
+                                    var temp = bingocrct.splice(0, 4);
+                                    showList.push(temp);
+                                    var temp1 = temp[0];
+                                    var temp2 = temp[1];
+                                    var temp3 = temp[2];
+                                    var temp4 = temp[3];
+                                    crntNo1.innerHTML = temp1
+                                    crntNo2.innerHTML = temp2
+                                    crntNo3.innerHTML = temp3
+                                    crntNo4.innerHTML = temp4
+                                    // ここで打ち込んでる。なにかこの辺をいじる場合はご自由にどうぞ
+                                    var allNo = document.getElementById("allNo")
+                                    allNo.innerHTML = showList
+                                }
+                            }
+                        </script>
 </body>
