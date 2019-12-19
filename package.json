@@ -15,5 +15,8 @@
     "url": "https://github.com/akiyamarob/bingosite/issues"
   },
   "homepage": "https://github.com/akiyamarob/bingosite#readme",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "jquery": "^3.4.1"
+  }
 }
