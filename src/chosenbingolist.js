@@ -1,4 +1,5 @@
 window.onload = function () {
+
     var chooser = ransu(2);
     if (chooser === 0) {
         chosenAnsList = ansList1;
@@ -8,7 +9,7 @@ window.onload = function () {
         chosenAnsList = anslist3;
     }
 
-    for (i = 1; i < 101; i++) {
+    for (i = 1; i < 76; i++) {
         randomlist.push(i);
     }
     lastRandList = randomlist
@@ -32,7 +33,7 @@ window.onload = function () {
         if (randomer < 0) {
             randomer = 0;
         }
-        if (randomer > 5) {
+        if (randomer > 1) {
             var num = ransu(lastRandList.length - 1);
             bingocrct.push(lastRandList[num]);
             lastRandList.splice(num, 1);
@@ -49,4 +50,5 @@ window.onload = function () {
             }
         }
     }
+        
 }

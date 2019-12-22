@@ -1,4 +1,4 @@
-@import url("//fonts.googleapis.com/css?family=Rye");
+
 .odometer.odometer-auto-theme, .odometer.odometer-theme-slot-machine {
   display: inline-block;
   vertical-align: middle;
@@ -92,7 +92,7 @@
   background-image: -webkit-linear-gradient(#ffff00, #ffa500);
   background-image: linear-gradient(#ffff00, #ffa500);
   background-color: #fc0;
-  font-family: "Rye", monospace;
+  font-family: monospace;
   padding: 0.15em;
   color: #f80000;
   line-height: 1.35em;
