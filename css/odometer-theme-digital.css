@@ -1,4 +1,4 @@
-@import url("//fonts.googleapis.com/css?family=Wallpoet");
+
 .odometer.odometer-auto-theme, .odometer.odometer-theme-digital {
   display: inline-block;
   vertical-align: middle;
@@ -88,7 +88,7 @@
   background-image: -webkit-radial-gradient(rgba(139, 245, 165, 0.4), #000000);
   background-image: radial-gradient(rgba(139, 245, 165, 0.4), #000000);
   background-color: #000;
-  font-family: "Wallpoet", monospace;
+  font-family: monospace;
   padding: 0 0.2em;
   line-height: 1.1em;
   color: #8bf5a5;

@@ -3,7 +3,9 @@
     <script src="src/controller.js"></script>
     <script src="src/chosenbingolist.js"></script>
     <script src="src/ransu.js"></script>
-    <link rel="stylesheet" href="css/odometer-theme-slot-machine.css" />
+    <link rel="stylesheet" href="css/odometer-theme-digital.css" />
+    <link rel="stylesheet" href="css/bingosite.css" type="text/css" />
+
 
     <script>
         var ctlKey = false;
@@ -21,40 +23,49 @@
 </head>
 
 <body>
-
-    <input type="button" value="抽選" id="btn" onclick="choose()">
-    <a>現在のナンバー</a><a id="crntNo1" class="odometer">00<a> <a id="crntNo2" class="odometer">00<a></a> <a></a>
-                <br><a>これまでの結果：</a><a id="allNo"></a>
-                <!-- 基本的に要素はこの3つしかない。なにか思いついて足すかもしれない -->
-                <script>
-                    function zeroPadding(num) {
-                        return ('0' + num).slice(-2);
-                    }
-                    audioElem = new Audio();
-                    audioElem.src = "audio/nc42340.wav";
-                    audioElem.volume -= 0.3
-                    function choose() {
-                        audioElem.play();
-
-                        // ダイス音がなります
-                        if (0 >= bingocrct) {
-                            var btn = document.getElementById("btn")
-                            btn.disabled = "disabled";
-                            // 100超えたらボタンを非活性化
-                        } else {
-                            var crntNo = document.getElementById("crntNo")
-                            var temp = bingocrct.splice(0,2);
-                            showList.push(temp);
-                            var temp1 = temp[0];
-                            var temp2 = temp[1];
-                            temp1=zeroPadding(temp1)
-                            temp2=zeroPadding(temp2)
-                            crntNo1.innerHTML = temp1
-                            crntNo2.innerHTML = temp2
-                            // ここで打ち込んでる。なにかこの辺をいじる場合はご自由にどうぞ
-                            var allNo = document.getElementById("allNo")
-                            allNo.innerHTML = showList
+    <div class="bingo-struct">
+        <input type="button" value="抽選" id="btn" onclick="choose()"><br>
+        現在のナンバー<a id="crntNo1" class="odometer">00<a> <a id="crntNo2" class="odometer">00<a></a> <a></a>
+                    <br>
+                    <p>これまでの結果</p>
+                    <div class="choose-number" >
+                        <a id="allNo"></a>
+                    </div>
+                    <!-- 基本的に要素はこの3つしかない。なにか思いついて足すかもしれない -->
+                    <script>
+                        var counter=0;
+                        function zeroPadding(num) {
+                            return ('0' + num).slice(-2);
                         }
-                    }
-                </script>
+                        audioElem = new Audio();
+                        audioElem.src = "audio/nc42340.wav";
+                        audioElem.volume -= 0.3
+                        function choose() {
+                            audioElem.play();
+
+                            // ダイス音がなります
+                            if (0 >= bingocrct) {
+                                var btn = document.getElementById("btn")
+                                btn.disabled = "disabled";
+                                // 100超えたらボタンを非活性化
+                            } else {
+                                var crntNo = document.getElementById("crntNo")
+                                var temp = bingocrct.splice(0, 2);
+                                var temp1 = temp[0];
+                                var temp2 = temp[1];
+                                temp1 = zeroPadding(temp1);
+                                showList.push(temp1);
+                                temp2 = zeroPadding(temp2);
+                                showList.push(temp2);
+                                crntNo1.innerHTML = temp1
+                                crntNo2.innerHTML = temp2
+                                // ここで打ち込んでる。なにかこの辺をいじる場合はご自由にどうぞ
+                                var allNo = document.getElementById("allNo")
+                             showStr = showList.join(" ")
+                                allNo.innerHTML = showStr
+    
+                            }
+                        }
+                    </script>
+    </div>
 </body>
