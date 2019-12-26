@@ -3,7 +3,7 @@
     <script src="src/controller.js"></script>
     <script src="src/chosenbingolist.js"></script>
     <script src="src/ransu.js"></script>
-    <link rel="stylesheet" href="css/odometer-theme-digital.css" />
+    <link rel="stylesheet" href="css/odometer-theme-minimal.css" />
     <link rel="stylesheet" href="css/bingosite.css" type="text/css" />
 
 
@@ -23,14 +23,19 @@
 </head>
 
 <body>
+    <div id="container">
     <div class="bingo-struct">
-        <input type="button" value="抽選" id="btn" onclick="choose()"><br>
-        現在のナンバー<a id="crntNo1" class="odometer">00<a> <a id="crntNo2" class="odometer">00<a></a> <a></a>
+        現在のナンバー <input type="button" value="抽選" id="btn" onclick="choose()"><br><br>
+        <div class="CrntNo">
+        <a id="crntNo1" class="odometer">00<a> <a id="crntNo2" class="odometer">00<a></a> <a></a>  
+        </div>
+        
                     <br>
-                    <p>これまでの結果</p>
+                    <p class="label">これまでの結果</p>
                     <div class="choose-number" >
-                        <a id="allNo"></a>
+                        <p id="allNo"></p>
                     </div>
+
                     <!-- 基本的に要素はこの3つしかない。なにか思いついて足すかもしれない -->
                     <script>
                         var counter=0;
@@ -68,4 +73,5 @@
                         }
                     </script>
     </div>
+</div>
 </body>

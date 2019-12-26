@@ -5,21 +5,21 @@ body{
 }
 
 div.bingo-struct{
-    margin: 40px 0 0 20px;
+    font-weight:bold;
+
 }
 
 div.choose-number{
-    width: 70%;
-    text-align: center;
+    width: 90%;
+    text-align: center;    
     margin: auto;
     word-wrap: break-word;
-    white-space: pre-line;
-
 }
 
 a#allNo{
     margin: 0px 50px;
     line-break: strict;
+    display: block;
 }
 
 #btn {
@@ -44,3 +44,30 @@ a#allNo{
     box-shadow: none;
     text-shadow: -1px -1px rgba(255, 255, 255, 0.3), 1px 1px rgba(0, 0, 0, 0.3);
   }
+  #btn:disabled {
+    background: rgb(210, 238, 241);/*背景色*/
+    border-bottom: solid 2px rgb(12, 31, 34);
+    box-shadow: none;
+    color: #fff; 
+    text-shadow: -1px -1px rgba(255, 255, 255, 0.3), 1px 1px rgba(0, 0, 0, 0.3);
+  }
+  
+  #container {
+	height: 100%;
+	width: 75%;/*中央の幅の指定*/
+	margin: 0 auto;
+    background: #fff;/*中央の背景を白にする指定*/
+}
+
+p.result-number-font {
+    font-weight:bold;
+    background: linear-gradient(transparent 30%, rgb(131, 255, 162) 30%);
+  }
+div.CrntNo{
+    font-size: 70px;
+    margin-bottom: 0px;
+}
+p.label{
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
